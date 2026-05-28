@@ -32,6 +32,9 @@ on:
           - server
           - xfce
 
+permissions:
+  contents: write
+
 jobs:
   build:
     name: Build RK3588 EVB7 Image
