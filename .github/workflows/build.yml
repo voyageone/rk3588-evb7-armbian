@@ -73,3 +73,12 @@ jobs:
             **UI:** ${{ inputs.ui || 'minimal' }}
 
             Built with [Armbian Build Framework](https://github.com/armbian/build)
+
+      - name: Upload image as artifact (backup)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: armbian-rk3588-evb7-image
+          path: build/output/images/*.img.xz
+          retention-days: 7
+          if-no-files-found: ignore
